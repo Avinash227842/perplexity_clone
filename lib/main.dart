@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:perplexity_clone/homepage/homepage.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:perplexity_clone/pages/homepage.dart';
 import 'package:perplexity_clone/theme/colors.dart';
 
 void main() {
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.background
+        scaffoldBackgroundColor: AppColors.background,
+        textTheme: GoogleFonts.interTextTheme(
+          ThemeData.dark().textTheme
+        ),
       ),
       home: const Homepage()
     );
