@@ -22,7 +22,7 @@ class _SideBarState extends State<Sidebar> {
         children: [
           const SizedBox(height: 16),
           Icon(
-            Icons.auto_awesome_mosaic,
+            Icons.home_filled,
             color: AppColors.whiteColor,
             size: isCollapsed ? 30 : 60,
           ),
@@ -70,7 +70,7 @@ class _SideBarState extends State<Sidebar> {
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 100),
-              margin: EdgeInsets.symmetric(vertical: 14),
+              margin: const EdgeInsets.symmetric(vertical: 14),
               child: Icon(
                 isCollapsed
                     ? Icons.keyboard_arrow_right

@@ -10,31 +10,29 @@ class SidebarButton extends StatelessWidget {
     super.key,
     required this.isCollapsed,
     required this.icon,
-    required this.text
+    required this.text,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: isCollapsed ? MainAxisAlignment.center : MainAxisAlignment.start,
+      mainAxisAlignment: isCollapsed
+          ? MainAxisAlignment.center
+          : MainAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
-          child: Icon(
-            icon,
-            color: AppColors.iconGrey,
-            size: 22,
-          ),
+          margin: const EdgeInsets.symmetric(vertical: 14, horizontal: 10),
+          child: Icon(icon, color: AppColors.iconGrey, size: 22),
         ),
-        isCollapsed
-            ? const SizedBox()
-            : Text(
-          text,
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        if (!isCollapsed)
+          Flexible(
+            child: Text(
+              text,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ),
-        )
       ],
     );
   }
